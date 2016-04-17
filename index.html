@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>任务列表</title>
   <style type="text/css">
-    #list{
+    .list{
       margin:0 auto;
       width:50%;
     }
-    #ul-list{
+    .ul-list{
       text-align: left;
     }
     .li-list{
@@ -24,17 +24,43 @@
   <div>
     <h1 align="center">程序员篮子</h1>
   </div>
-  <div id="list">
-    <h2>田利云</h2>
-    <ul id="ul-list">
-    <li class="li-list"><a href="https://github.com/IRIFE/ife/tree/tliyun/task1">任务一：面向零基础的HTML代码编写</a></li>
-    <li class="li-list"><a href="https://github.com/IRIFE/ife/tree/tliyun/task2">任务二：基于任务1的HTML代码，实现简单的CSS代码编写</a></li>
-    <li class="li-list"><a href="https://github.com/IRIFE/ife/tree/tliyun/task3">任务三：HTML、CSS布局入门，三栏式布局的实践</a></li>
-      <li class="li-list">任务四：HTML、CSS布局深入，定位和居中问题的实践</li>
-      <li class="li-list">任务五：基于任务1的HTML代码，实现一个稍微复杂的CSS代码编写</li>
-      
-    </ul>
+  
+  <div class="list">
+    <select id="name-list">
+      <option>田利云</option>
+      <option>王安然</option>
+    </select>
+    <br/> 
+    <iframe id="iframe" style="margin-top: 20px;border: 0;width: 700px;height: 2000px"></iframe>
   </div>
+
+  <script type="text/javascript">
+    var iframe=document.getElementById('iframe');
+    var list=document.getElementById('name-list');
+    var state={nowSelectName:"田利云"};
+
+    function show(){
+      selectName=list.value;
+      // alert(selectName);
+      if(selectName === state.nowSelectName){
+          alert(state.nowSelectName);
+          return;
+      }
+      state.nowSelectName=selectName;
+
+      switch(selectName){
+        case "田利云" :iframe.src="tliyun.html";iframe.location.reload();break;
+        case "王安然" :iframe.src="anran.html";iframe.location.reload();break;
+      }
+    }
+
+    function init(){
+      iframe.src="tliyun.html";
+      list.addEventListener('change',show);
+    }
+
+    init();
+  </script>
   
 </body>
 </html>
