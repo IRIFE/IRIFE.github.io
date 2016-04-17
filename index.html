@@ -1,23 +1,20 @@
----
-layout: default
----
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
--->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>任务列表</title>
+</head>
+<body>
+  <div id="list">
+    <ul id="ul-list">
+      <li class="li-list">任务一：面向零基础的HTML代码编写</li>
+      <li class="li-list">任务二：基于任务1的HTML代码，实现简单的CSS代码编写</li>
+      <li class="li-list">任务三：HTML、CSS布局入门，三栏式布局的实践</li>
+      <li class="li-list">任务四：HTML、CSS布局深入，定位和居中问题的实践</li>
+      <li class="li-list">任务五：基于任务1的HTML代码，实现一个稍微复杂的CSS代码编写</li>
+      <li class="li-list">任务六：按照设计图，通过HTML/CSS实现一个像报纸杂志一样的页面布局排版</li>
+    </ul>
+  </div>
+  
+</body>
+</html>
