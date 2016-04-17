@@ -27,7 +27,7 @@
   
   <div class="list">
     <select id="name-list">
-      <option>田利云</option>
+      <option checked="checked">田利云</option>
       <option>王安然</option>
     </select>
     <br/> 
@@ -41,25 +41,22 @@
 
     function show(){
       selectName=list.value;
-      // alert(selectName);
-      if(selectName === state.nowSelectName){
-          alert(state.nowSelectName);
-          return;
-      }
       state.nowSelectName=selectName;
 
       switch(selectName){
-        case "田利云" :iframe.src="tliyun.html";iframe.location.reload();break;
-        case "王安然" :iframe.src="anran.html";iframe.location.reload();break;
+        case "田利云" :iframe.src="tliyun.html";break;
+        case "王安然" :iframe.src="anran.html";break;
       }
     }
 
     function init(){
-      iframe.src="tliyun.html";
       list.addEventListener('change',show);
+      show();
     }
 
-    init();
+    window.onload=function(){
+      init();
+    };
   </script>
   
 </body>
